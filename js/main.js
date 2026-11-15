@@ -251,6 +251,46 @@
 
   /* ---------- Contact details + links ---------- */
   var hasMail = P.email && P.email.indexOf("example.com") === -1;
+
+  // Education rows
+  var eduRows = (P.education || []).filter(function (e) { return e.school; });
+  if (eduRows.length) {
+    var eduSec = $("#education");
+    eduSec.hidden = false;
+    eduRows.forEach(function (e, i) {
+      var li = el("li", "edu-row reveal");
+      li.style.setProperty("--d", i * 0.1 + "s");
+      li.appendChild(el("p", "edu-level", e.level));
+      var mid = el("div", "edu-mid");
+      mid.appendChild(el("h3", "", e.school));
+      var sub = [e.place, e.years].filter(Boolean).join(", ");
+      if (sub) mid.appendChild(el("p", "", sub));
+      li.appendChild(mid);
+      if (e.marks) li.appendChild(el("p", "edu-marks", e.marks));
+      $("[data-education]").appendChild(li);
+    });
+  } else {
+    var eduLink = $(".nav-links a[href='#education']");
+    if (eduLink) eduLink.remove();
+  }
+
+  // Ways to reach her, shown beside the form
+  var ways = $("[data-ways]");
+  function way(label, text, href, newTab) {
+    var li = el("li");
+    var a = el("a", "magnet");
+    a.href = href;
+    if (newTab) { a.target = "_blank"; a.rel = "noopener"; }
+    a.appendChild(el("span", "", label));
+    a.appendChild(el("b", "", text));
+    li.appendChild(a);
+    ways.appendChild(li);
+  }
+  var short = function (u) { return u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""); };
+  if (hasMail) way("Email", P.email, "mailto:" + P.email);
+  if (P.phone) way("Phone", P.phone, "tel:" + P.phone.replace(/[^+\d]/g, ""));
+  if ((P.links || {}).github) way("GitHub", short(P.links.github), P.links.github, true);
+  if ((P.links || {}).linkedin) way("LinkedIn", short(P.links.linkedin), P.links.linkedin, true);
   $$("[data-mail]").forEach(function (m) {
     if (hasMail) { m.textContent = P.email; m.href = "mailto:" + P.email; }
   });

@@ -10,7 +10,8 @@
 window.PORTFOLIO = {
   name: "Leki Reddy Sree Priya",
   shortName: "Sree Priya",                // used in "Hi, I'm ___."
-  email: "your.email@example.com",        // her email (hidden until changed)
+  email: "lekireddysreepriya247@gmail.com",
+  phone: "+91 93907 45469",                              // contact number, e.g. "+91 98765 43210" (hidden while empty)
   location: "Bengaluru, India",
   timezone: "Asia/Kolkata",
   status: "Open to internships",
@@ -20,7 +21,7 @@ window.PORTFOLIO = {
   roles: ["AIML Engineer", "Python Developer", "Web Developer", "AI Model Builder"],
 
   intro:
-    "A computer science student who likes taking an idea all the way from a blank file to something people can open and use.",
+    "A B.Tech CSE (AI & ML) student at Jain University who likes taking an idea all the way from a blank file to something people can open and use.",
 
   // Each skill is one door. "color" is the door colour.
   skills: [
@@ -106,18 +107,27 @@ window.PORTFOLIO = {
     }
   ],
 
-  // EXAMPLES - newest first. Replace with her real journey.
+  // Journey, newest first.
   journey: [
-    { when: "2026", title: "Building AI models", place: "Projects and coursework", text: "Started training machine learning models and connecting them to web pages with Python." },
-    { when: "2025", title: "First websites", place: "Self-taught", text: "Learned HTML, CSS and JavaScript and published my first pages online." },
-    { when: "2024", title: "Python", place: "College", text: "Picked up Python for scripting, data handling and backend work." },
-    { when: "2023", title: "Started with Java", place: "College", text: "Wrote my first programs and learned object-oriented programming." }
+    { when: "2026", title: "Built this portfolio", place: "Jain University", text: "Designed and published this site, with a Python backend for the contact form and visitor counter." },
+    { when: "2025", title: "Started B.Tech in CSE (AI & ML)", place: "Jain University, Bengaluru", text: "Began my degree in computer science with a focus on artificial intelligence and machine learning." },
+    { when: "2025", title: "Finished Class 12", place: "Sri Chaitanya College", text: "Completed Class 12 with 93%." },
+    { when: "2023", title: "Finished Class 10", place: "Narayana School, Tadipatri", text: "Completed Class 10 with 89%." }
+  ],
+
+
+  // Education, newest first. A row is hidden while its "school" is empty.
+  // "marks" is shown big on the right, e.g. "9.1 CGPA" or "95%".
+  education: [
+    { level: "B.Tech, CSE (AI & ML)", school: "Jain University", place: "Bengaluru", years: "2025 to 2029", marks: "8.6 CGPA" },
+    { level: "Class 12", school: "Sri Chaitanya College", place: "", years: "2025", marks: "93%" },
+    { level: "Class 10", school: "Narayana School", place: "Tadipatri", years: "2023", marks: "89%" }
   ],
 
   // Leave a link as "" to hide it.
   links: {
-    github: "",
-    linkedin: "",
+    github: "https://github.com/lekireddysreepriya247-alt",
+    linkedin: "https://www.linkedin.com/in/sree-priya-64161038a/",
     resume: ""
   }
 };
